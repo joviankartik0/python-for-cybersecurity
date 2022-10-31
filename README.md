@@ -44,6 +44,7 @@ else:
     print(f"The correct number is {random_num}")
 ```
 Opdracht 3: Inventory
+Deze opdracht heb ik samen met een medestudent gemaakt
 ``` python
 masterInv = []
  
@@ -145,4 +146,35 @@ class inventory:
                 invList.pop(i)
                 break  
         return invList
+```
+Opdracht 5: On your own
+Deze opdracht heb ik samen met een medestudent gemaakt
+``` python
+import requests
+import json
+
+base_url = 'https://pokeapi.co/api/v2/pokemon/'
+url_querry = input("Choose your pokemon: ")
+
+
+r = requests.get(f'{base_url}{url_querry}')
+
+resultName = r.json()["name"]
+
+types = r.json()["types"]
+resultType = types[0]["type"]
+resultType = resultType["name"]
+
+resultWeight = r.json()["weight"]
+
+resultHeight = r.json()["height"]
+
+resultMoves = r.json()["moves"]
+resultMoves = len(resultMoves)
+
+resultId = r.json()["id"]
+
+
+
+print(f'name: {resultName}\n type: {resultType} \nweight: {resultWeight} \nheight: {resultHeight} \nid: {resultId} \nmove amount: {resultMoves}')
 ```
