@@ -110,11 +110,11 @@ while start:
             for i in range(len(inventoryList)):
                 if item_name_quantity == inventoryList[i].name:
                     inventoryList[i].quantity_change(answer_b, num)
+                    if inventoryList[i].quantity >= 0:
+                        inventoryList.pop(i)
         elif question == "c":
             item_delete = input("\nWhat item?\nYour answer: ").lower()
-            for i in range(len(inventoryList)):
-                if item_delete == inventoryList[i].name:
-                    inventoryList.pop(i)  
+            inventory.delete_items(inventoryList, item_delete)
         elif question == "d":
             for i in range(len(inventoryList)):
                 inventoryList[i].print_items()
@@ -138,4 +138,11 @@ class inventory:
     
     def print_items(self):
         print(f"\nName: {self.name}\nDescription: {self.description}\nQuantity: {self.quantity}\n")
+
+    def delete_items(invList, name):
+        for i in range(len(invList)):
+            if name == invList[i].name:
+                invList.pop(i)
+                break  
+        return invList
 ```

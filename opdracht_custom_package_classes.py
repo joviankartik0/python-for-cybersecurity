@@ -13,6 +13,13 @@ class inventory:
     def print_items(self):
         print(f"\nName: {self.name}\nDescription: {self.description}\nQuantity: {self.quantity}\n")
 
+    def delete_items(invList, name):
+        for i in range(len(invList)):
+            if name == invList[i].name:
+                invList.pop(i)
+                break  
+        return invList
+
 
     
         
