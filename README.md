@@ -154,7 +154,7 @@ import requests
 import json
 
 base_url = 'https://pokeapi.co/api/v2/pokemon/'
-url_querry = input("Choose your pokemon: ")
+url_querry = input("Choose your pokemon: ").lower()
 
 
 r = requests.get(f'{base_url}{url_querry}')
