@@ -152,29 +152,27 @@ Deze opdracht heb ik samen met een medestudent gemaakt
 ``` python
 import requests
 import json
+try:
+    base_url = 'https://pokeapi.co/api/v2/pokemon/'
+    url_querry = input("Choose your pokemon: ").lower()
+    r = requests.get(f'{base_url}{url_querry}')
 
-base_url = 'https://pokeapi.co/api/v2/pokemon/'
-url_querry = input("Choose your pokemon: ").lower()
+    resultName = r.json()["name"]
 
+    types = r.json()["types"]
+    resultType = types[0]["type"]
+    resultType = resultType["name"]
 
-r = requests.get(f'{base_url}{url_querry}')
+    resultWeight = r.json()["weight"]
 
-resultName = r.json()["name"]
+    resultHeight = r.json()["height"]
 
-types = r.json()["types"]
-resultType = types[0]["type"]
-resultType = resultType["name"]
+    resultMoves = r.json()["moves"]
+    resultMoves = len(resultMoves)
 
-resultWeight = r.json()["weight"]
+    resultId = r.json()["id"]
 
-resultHeight = r.json()["height"]
-
-resultMoves = r.json()["moves"]
-resultMoves = len(resultMoves)
-
-resultId = r.json()["id"]
-
-
-
-print(f'name: {resultName}\ntype: {resultType} \nweight: {resultWeight} \nheight: {resultHeight} \nid: {resultId} \nmove amount: {resultMoves}')
+    print(f'name: {resultName}\ntype: {resultType} \nweight: {resultWeight} \nheight: {resultHeight} \nid: {resultId} \nmove amount: {resultMoves}')
+except:
+    print("Something went wrong!")
 ```
