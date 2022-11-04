@@ -24,4 +24,4 @@ resultId = r.json()["id"]
 
 
 
-print(f'name: {resultName}\n type: {resultType} \nweight: {resultWeight} \nheight: {resultHeight} \nid: {resultId} \nmove amount: {resultMoves}')
+print(f'name: {resultName}\ntype: {resultType} \nweight: {resultWeight} \nheight: {resultHeight} \nid: {resultId} \nmove amount: {resultMoves}')
