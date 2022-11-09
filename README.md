@@ -44,7 +44,7 @@ else:
     print(f"The correct number is {random_num}")
 ```
 Opdracht 3: Inventory
-Deze opdracht heb ik samen met een medestudent gemaakt
+(Deze opdracht heb ik samen met een medestudent gemaakt)
 ``` python
 masterInv = []
  
@@ -150,7 +150,7 @@ class inventory:
 ```
 ## Let's make API requests
 Opdracht 5: On your own
-Deze opdracht heb ik samen met een medestudent gemaakt
+(Deze opdracht heb ik samen met een medestudent gemaakt)
 ``` python
 import requests
 import json
