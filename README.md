@@ -178,7 +178,7 @@ try:
 except:
     print("Something went wrong!")
 ```
-Extra opdracht: BS
+Extra opdracht: Brawl Stars API
 ``` python
 import requests
 import json
